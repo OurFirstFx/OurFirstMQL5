@@ -1,0 +1,13 @@
+void OnStart() {
+	int h = FileOpen("test.txt", FILE_READ | FILE_ANSI | FILE_TXT);
+	
+	if (h == INVALID_HANDLE) {
+		Alert("error opening file");
+		return;
+	}
+	
+	string str = FileReadString(h);
+	Alert(str);
+	
+	FileClose(h);
+}
